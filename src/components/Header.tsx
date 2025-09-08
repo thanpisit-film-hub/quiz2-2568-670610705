@@ -7,6 +7,7 @@ import {
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { IconSun, IconMoon } from "@tabler/icons-react";
+import { IconCurrencyBaht } from '@tabler/icons-react';
 
 interface HeaderComponentProps {
   opened: boolean;
@@ -26,6 +27,7 @@ export default function HeaderComponent({
   return (
     <Group p="md" justify="space-between">
       <Group>
+        
         {isMobile && (
           <Burger
             opened={opened}
@@ -33,6 +35,15 @@ export default function HeaderComponent({
             aria-label="Toggle navigation"
           />
         )}
+        <ActionIcon
+          variant="filled"
+          color={isDark ? "yellow" : "blue"}
+          onClick={toggleColorScheme}
+          size="lg"
+          aria-label={isDark ? "Light mode" : "Dark mode"}
+        >
+          {isDark ? <IconCurrencyBaht size={20} /> : <IconCurrencyBaht size={20} />}
+          </ActionIcon>
         <Text
           size="xl"
           fw={900}
